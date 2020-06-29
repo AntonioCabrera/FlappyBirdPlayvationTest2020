@@ -2,7 +2,7 @@
     "name": "PlayMode",
     "references": [
         "Scripts"
-    ],
+ ,"Unity.TextMeshPro"     ],
     "optionalUnityReferences": [
         "TestAssemblies"
     ],

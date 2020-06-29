@@ -31,9 +31,7 @@ public class ColumnPool : MonoBehaviour
             //...and create the individual columns.
             columns[i] = Instantiate(ColumnPrefab, objectPoolPosition, Quaternion.identity,ColumnsParent);
         }
-
-
-        InvokeSpawnColumnsCoroutine(3);
+        
     }
 
     public void InvokeSpawnColumnsCoroutine(int delay)

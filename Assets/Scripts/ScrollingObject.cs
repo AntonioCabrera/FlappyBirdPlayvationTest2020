@@ -16,12 +16,11 @@ public class ScrollingObject : MonoBehaviour
         rb2d.velocity = new Vector2 (GameManager.Instance.ScrollSpeed, 0);
 	}
 
-	void Update()
-	{
-		// If the game is over, stop scrolling.
-		if(GameManager.Instance.GameOver == true)
-		{
+
+    public void StopScrolling()
+    {
             rb2d.velocity = Vector2.zero;
-		}
-	}
+    }
+
+	
 }

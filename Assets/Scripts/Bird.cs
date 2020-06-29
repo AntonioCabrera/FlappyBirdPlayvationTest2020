@@ -4,8 +4,10 @@ using System.Collections;
 public class Bird : MonoBehaviour
 {
     public float UpForce;                   //Upward force of the "flap".
-    private bool IsDead = false;            //Has the player collided with a wall?
+    
 
+
+    private bool IsDead = false;            //Has the player collided with a wall?
     private Animator anim;                  //Reference to the Animator component.
     private Rigidbody2D rb2d;               //Holds a reference to the Rigidbody2D component of the bird.
 
@@ -19,7 +21,7 @@ public class Bird : MonoBehaviour
 
     void Update()
     {
-        if (IsDead == false)
+        if (IsDead == false && GameManager.Instance.PlayerCanMove)
         {
             //Checking Y+ position to avoid flying out of view
             if (Input.GetMouseButtonDown(0) && transform.position.y < 3.5)

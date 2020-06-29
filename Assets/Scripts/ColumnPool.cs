@@ -4,6 +4,7 @@ using System.Collections;
 public class ColumnPool : MonoBehaviour
 {
     public GameObject ColumnPrefab;                                 //The column game object.
+    public GameObject SingleColumnPrefab;
     public Transform ColumnsParent;
     public int ColumnPoolSize = 5;                                  //How many columns to keep on standby.
     public float SpawnRate = 3f;                                    //How quickly columns spawn.
@@ -28,8 +29,16 @@ public class ColumnPool : MonoBehaviour
         //Loop through the collection... 
         for (int i = 0; i < ColumnPoolSize; i++)
         {
-            //...and create the individual columns.
+            if (i == 3)
+            {
+                columns[i] = Instantiate(SingleColumnPrefab, objectPoolPosition, Quaternion.identity, ColumnsParent);
+            }
+            else
+            {
             columns[i] = Instantiate(ColumnPrefab, objectPoolPosition, Quaternion.identity,ColumnsParent);
+            }
+
+
         }
         
     }

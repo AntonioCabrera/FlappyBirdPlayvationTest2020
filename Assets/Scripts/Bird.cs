@@ -4,7 +4,7 @@ using System.Collections;
 public class Bird : MonoBehaviour
 {
     public float UpForce;                   //Upward force of the "flap".
-    
+    public ParticleSystem JumpParticleSystem;
 
 
     private bool IsDead = false;            //Has the player collided with a wall?
@@ -32,6 +32,7 @@ public class Bird : MonoBehaviour
                 rb2d.velocity = Vector2.zero;
                 //	new Vector2(rb2d.velocity.x, 0);
                 //..giving the bird some upward force.
+                JumpParticleSystem.Play();
                 rb2d.AddForce(new Vector2(0, UpForce));
             }
         }

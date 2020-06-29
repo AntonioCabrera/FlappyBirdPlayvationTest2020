@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
     public GameObject MainMenuTapToStartText;
     public GameObject NameInputMenu;
     public GameObject GameOverMenu;
+    public Button GameOverMenuTapToContinueButton;
     public TMP_InputField PlayerNameInputField;
     public GameObject NameNotAvailableText;
 
@@ -82,14 +84,13 @@ public class UIManager : MonoBehaviour
             TopFiveScoresTexts[refreshLeaderboardIndex].text = item.score;
             refreshLeaderboardIndex++;
         }
-
+        TurnOnGameOverMenuTapToContinueButton();
         currentPlayerHighscore = PlayerPrefs.GetInt("PlayerHighScore", 0).ToString();
         MainMenuPlayerHighscore.text = currentPlayerHighscore;
         GameOverMenuPlayerHighscoreText.text = currentPlayerHighscore;
 
 
         CurrentPlayerScoreText.text = GameManager.CurrentScore.ToString();
-        TurnOnGameOverMenu();
     }
 
 
@@ -158,6 +159,17 @@ public class UIManager : MonoBehaviour
     public void TurnOffGameOverMenu()
     {
         GameOverMenu.SetActive(false);
+    }
+
+
+    public void TurnOnGameOverMenuTapToContinueButton()
+    {
+        GameOverMenuTapToContinueButton.interactable = true;
+    }
+
+    public void TurnOffGameOverMenuTapToContinueButton()
+    {
+        GameOverMenuTapToContinueButton.interactable = false;
     }
 
 

@@ -119,6 +119,7 @@ public class LeaderboardManager : MonoBehaviour
     {
         UIManager.TurnOffCurrentPlayerScoreText();
         UIManager.TurnOnGameOverMenu();
+        UIManager.TurnOffGameOverMenuTapToContinueButton();
         UnityWebRequest www = UnityWebRequest.Get(getTopFiveLeaderboardsUrl);
         yield return www.SendWebRequest();
 

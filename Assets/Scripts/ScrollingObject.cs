@@ -9,19 +9,19 @@ public class ScrollingObject : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		//Get and store a reference to the Rigidbody2D attached to this GameObject.
-		rb2d = GetComponent<Rigidbody2D>();
+        //Get and store a reference to the Rigidbody2D attached to this GameObject.
+        rb2d = GetComponent<Rigidbody2D>();
 
-		//Start the object moving.
-		rb2d.velocity = new Vector2 (GameControl.instance.scrollSpeed, 0);
+        //Start the object moving.
+        rb2d.velocity = new Vector2 (GameManager.Instance.ScrollSpeed, 0);
 	}
 
 	void Update()
 	{
 		// If the game is over, stop scrolling.
-		if(GameControl.instance.gameOver == true)
+		if(GameManager.Instance.GameOver == true)
 		{
-			rb2d.velocity = Vector2.zero;
+            rb2d.velocity = Vector2.zero;
 		}
 	}
 }

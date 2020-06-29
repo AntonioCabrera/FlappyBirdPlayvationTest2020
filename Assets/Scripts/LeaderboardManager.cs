@@ -7,14 +7,10 @@ public class LeaderboardManager : MonoBehaviour
 {
     [Header("Managers references")]
     public UIManager UIManager;
-
-
     [Space(10)]
-
     [Header("API Keys")]
     public string DreamloPrivateKey;
     public string DreamloPublicKey;
-
     [HideInInspector]
     public string PlayerName;
 
@@ -117,6 +113,7 @@ public class LeaderboardManager : MonoBehaviour
 
     private IEnumerator GetLeaderboard()
     {
+        //UI flows controlls
         UIManager.TurnOffCurrentPlayerScoreText();
         UIManager.TurnOnGameOverMenu();
         UIManager.TurnOffGameOverMenuTapToContinueButton();
@@ -159,7 +156,7 @@ public class LeaderboardManager : MonoBehaviour
     }
 
 
-
+    //Post current try score, the service will override its entry only if improved the highscore
     private IEnumerator PostCurrentPlayerScore(string Player, string Score)
     {
         WWWForm form = new WWWForm();

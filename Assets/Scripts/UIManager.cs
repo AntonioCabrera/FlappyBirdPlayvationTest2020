@@ -45,15 +45,19 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        //sets initial values 
         currentPlayerHighscore = PlayerPrefs.GetInt("PlayerHighScore", 0).ToString();
         MainMenuPlayerHighscore.text = currentPlayerHighscore;
         GameOverMenuPlayerHighscoreText.text = currentPlayerHighscore;
     }
 
+    //OnclickListener of the GameOverMenu fullscreen button
     public void OnGameOverTapToContinueButtonClick()
     {
         reloadSceneWithDelayCoroutine = StartCoroutine(ReloadSceneWithDelay(0.5f));
     }
+
+    //OnclickListener of the MainMenu fullscreen button
     public void MainMenuTapToStartButton()
     {
         TurnOffMainMenu();
@@ -61,11 +65,11 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.StartGame();
     }
 
+    //Reloads scene with a little delay  to give time at the end so the injection gets done before it can be reloaded
     public IEnumerator ReloadSceneWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         GameManager.Instance.ReloadScene();
-
     }
 
 

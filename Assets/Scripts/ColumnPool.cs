@@ -3,18 +3,16 @@ using System.Collections;
 
 public class ColumnPool : MonoBehaviour
 {
-    public GameObject ColumnPrefab;                                 //The column game object.
+    public GameObject ColumnPrefab;                               
     public GameObject SingleColumnPrefab;
     public Transform ColumnsParent;
-    public int ColumnPoolSize = 5;                                  //How many columns to keep on standby.
-    public float SpawnRate = 3f;                                    //How quickly columns spawn.
-    public float ColumnMin = -1f;                                   //Minimum y value of the column position.
-    public float ColumnMax = 3.5f;                                  //Maximum y value of the column position.
+    public int ColumnPoolSize = 5;                                  
+    public float ColumnMin = -1f;                                  
+    public float ColumnMax = 3.5f;                                 
 
-    private GameObject[] columns;                                   //Collection of pooled columns.
-    private int currentColumn = 0;                                  //Index of the current column in the collection.
-
-    private Vector2 objectPoolPosition = new Vector2(-15, -25);     //A holding position for our unused columns offscreen.
+    private GameObject[] columns;                                   
+    private int currentColumn = 0;                                  
+    private Vector2 objectPoolPosition = new Vector2(-15, -25);     
     private float spawnXPosition = 10f;
 
 
@@ -44,6 +42,7 @@ public class ColumnPool : MonoBehaviour
         
     }
 
+    //Invoke coroutine
     public void InvokeSpawnColumnsCoroutine(int delay)
     {
         if (spawnColumnsCoroutine != null)

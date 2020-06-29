@@ -31,7 +31,7 @@ Original asset can be found on https://assetstore.unity.com/packages/templates/f
        
  ## Comments:  
  I decided to avoid AWS as I used it on the past but only from the FrontEnd, although I know a little about its APIS and flows, not enought to spend a lot of time preparing the service. I decided to use Dreamlo, a simple and small service to provide what I needed in this test.  
- I spent a bit more than 6 hours in the exercise because I found some troubles when testing on Android related to the Unit Test assemblies so I had to remove them because I really wanted it to be mobile ready and it is! It only needs to check the Build App Bundle checkbox and sign the apk to prepare it for the store. 
+ I spent a bit more than 6 hours in the exercise because I found some troubles when testing on Android related to the Unit Test assemblies so I had to remove them because I really wanted it to be mobile ready and it is! It only needs to sign the apk and its prepared for the store. 
    
  * Now I'm out of time, but I want to add some things I would have liked to add:  
    * Optimization on background textures and revamp of the scrolling system.    

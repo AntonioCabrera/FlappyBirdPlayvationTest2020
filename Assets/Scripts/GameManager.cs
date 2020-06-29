@@ -4,23 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;         //A reference to our game control script so we can access it statically.
+    [Header("Managers")]
+    public static GameManager Instance;         
     public UIManager UIManager;
     public LeaderboardManager LeaderboardManager;
     public ColumnPool ColumnPool;
 
+    [Space(20)]
     public ScrollingObject[] ScrollingObjects;
-
     public TextMeshProUGUI ScoreText;                       //A reference to the UI text component that displays the player's score.
-    public GameObject GameOvertext;             //A reference to the object that displays the text which appears when the player dies.
-
-    public bool GameOver = false;               //Is the game over?
+    public bool GameOver = false;              
     public float ScrollSpeed = -1.5f;
-
     [HideInInspector]
     public int CurrentScore = 0;                      //The player's score.
     [HideInInspector]
-    public bool PlayerCanMove = false;
+    public bool PlayerCanMove = false;                //Is player's movement blocked
+
 
     private Rigidbody2D playerRigidbody;
     private string playerName;

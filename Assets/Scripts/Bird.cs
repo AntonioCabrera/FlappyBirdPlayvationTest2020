@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Bird : MonoBehaviour
 {
@@ -26,12 +25,8 @@ public class Bird : MonoBehaviour
             //Checking Y+ position to avoid flying out of view
             if (Input.GetMouseButtonDown(0) && transform.position.y < 3.5)
             {
-                //...tell the animator about it and then...
                 anim.SetTrigger("Flap");
-                //...zero out the birds current y velocity before...
                 rb2d.velocity = Vector2.zero;
-                //	new Vector2(rb2d.velocity.x, 0);
-                //..giving the bird some upward force.
                 JumpParticleSystem.Play();
                 rb2d.AddForce(new Vector2(0, UpForce));
             }
@@ -40,24 +35,24 @@ public class Bird : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Column"))
+        if (other.gameObject.CompareTag("Column") && IsDead == false)
         {
             //Bird triggered a column score trigger
-
             GameManager.Instance.BirdScored();
         }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        // Zero out the bird's velocity
-        rb2d.velocity = Vector2.zero;
-        // If the bird collides with something set it to dead...
-        IsDead = true;
-        //...tell the Animator about it...
-        anim.SetTrigger("Die");
-        //...and tell the game control about it.
-        GameManager.Instance.BirdDied();
+        //if bird detects collision with anything physic ( ground or columns ) dies.
+        if (IsDead == false)
+        {
+            rb2d.velocity = Vector2.zero;
+            IsDead = true;
+            anim.SetTrigger("Die");
+            GameManager.Instance.BirdDied();
+        }
+
 
 
     }

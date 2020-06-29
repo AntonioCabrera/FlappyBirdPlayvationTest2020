@@ -27,7 +27,6 @@ public class RepeatingBackground : MonoBehaviour
 		}
 	}
 
-	//Moves the object this script is attached to right in order to create our looping background effect.
 	private void RepositionBackground()
 	{
         //This is how far to the right we will move our background object, in this case, twice its length. This will position it directly to the right of the currently visible background object.

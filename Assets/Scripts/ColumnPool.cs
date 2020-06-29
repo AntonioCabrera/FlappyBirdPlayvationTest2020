@@ -29,6 +29,7 @@ public class ColumnPool : MonoBehaviour
         //Loop through the collection... 
         for (int i = 0; i < ColumnPoolSize; i++)
         {
+            //Every three columns will instantiate a single floating column
             if (i == 3)
             {
                 columns[i] = Instantiate(SingleColumnPrefab, objectPoolPosition, Quaternion.identity, ColumnsParent);

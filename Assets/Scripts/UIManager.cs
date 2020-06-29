@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     public GameObject NameInputMenu;
     public GameObject GameOverMenu;
     public Button GameOverMenuTapToContinueButton;
+    public GameObject GameOverMenuTapToContinueText;
     public TMP_InputField PlayerNameInputField;
     public GameObject NameNotAvailableText;
 
@@ -111,7 +112,7 @@ public class UIManager : MonoBehaviour
     }
 
 
-    //Triggered after a succesfull REST call
+    //Triggered after a succesfull REST call, ony called first time when the name is asked.
     public void SetPlayerNameOnPlayerPreferences(bool nameAvailable, string playerName)
     {
         if (nameAvailable)
@@ -168,11 +169,13 @@ public class UIManager : MonoBehaviour
 
     public void TurnOnGameOverMenuTapToContinueButton()
     {
+        GameOverMenuTapToContinueText.SetActive(true);
         GameOverMenuTapToContinueButton.interactable = true;
     }
 
     public void TurnOffGameOverMenuTapToContinueButton()
     {
+        GameOverMenuTapToContinueText.SetActive(false);
         GameOverMenuTapToContinueButton.interactable = false;
     }
 

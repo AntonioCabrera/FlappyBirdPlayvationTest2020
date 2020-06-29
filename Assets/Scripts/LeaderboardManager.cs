@@ -58,7 +58,7 @@ public class LeaderboardManager : MonoBehaviour
     }
 
 
-
+    //This method is called from UIManager's Input field's "Send" button and goes back to update playerprefs and launch game
     private IEnumerator CheckNameAvailability(string playerName)
     {
         //Preformats the name to be url friendly (could be better)
@@ -97,7 +97,7 @@ public class LeaderboardManager : MonoBehaviour
 
 
 
-    #region Get top 5 leaderboard
+    #region Get top 5 leaderboard and update the leaderboard
 
     //This method is triggered by the player's death
     public void InvokeGetTopFiveLeaderboardCoroutine()
@@ -126,6 +126,7 @@ public class LeaderboardManager : MonoBehaviour
         if (www.isNetworkError)
         {
             Debug.Log(www.error);
+            UIManager.TurnOnGameOverMenuTapToContinueButton();
         }
         else
         {
@@ -143,7 +144,7 @@ public class LeaderboardManager : MonoBehaviour
 
 
 
-    #region Post score
+    #region Post player's score
     public void InvokePostCurrentPlayerScoreCoroutine(string player, string score)
     {
         if (postCurrentPlayerScoreCoroutine != null)

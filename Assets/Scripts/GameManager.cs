@@ -82,10 +82,8 @@ public class GameManager : MonoBehaviour
         //The bird can't score if the game is over.
         if (GameOver)
             return;
-        //If the game is not over, increase the score...
         CurrentScore++;
-        //...and adjust the score text.
-        ScoreText.text = "Score: " + CurrentScore.ToString();
+        UIManager.AddScoreToCurrent(CurrentScore.ToString());
     }
 
     public void BirdDied()

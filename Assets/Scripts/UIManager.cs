@@ -34,6 +34,8 @@ public class UIManager : MonoBehaviour
     public TMP_InputField PlayerNameInputField;
     public GameObject NameNotAvailableText;
 
+    [Space(10)]
+    public Animator CurrentScoreFeedbackAnimator;
 
 
     private Coroutine reloadSceneWithDelayCoroutine;
@@ -69,7 +71,9 @@ public class UIManager : MonoBehaviour
     //This method is called every time you score a point and updates the current score visualization.
     public void AddScoreToCurrent(string score)
     {
-        CurrentPlayerScoreText.text = score;
+
+        CurrentPlayerScoreText.text = "Score: " + score;
+        CurrentScoreFeedbackAnimator.SetTrigger("FeedbackAnimation");
     }
 
 

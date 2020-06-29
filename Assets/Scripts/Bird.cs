@@ -43,6 +43,7 @@ public class Bird : MonoBehaviour
         if (other.gameObject.CompareTag("Column"))
         {
             //Bird triggered a column score trigger
+
             GameManager.Instance.BirdScored();
         }
     }

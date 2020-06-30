@@ -15,8 +15,9 @@ public class Bird : MonoBehaviour
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
+    
 
-    void Update()
+    void FixedUpdate()
     {
         if (IsDead == false && GameManager.Instance.PlayerCanMove)
         {

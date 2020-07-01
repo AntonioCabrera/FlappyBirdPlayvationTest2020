@@ -4,6 +4,7 @@ Original asset can be found on https://assetstore.unity.com/packages/templates/f
 
 
 ## Main changes:  
+  * Updated to the latest LongTermSupport version of Unity3D 2018 (2018.4.23f1).
   * Main menu and Gameover menu with leaderboards added.  
   * Input name menu for the first execution with basic controls to filter url friendly characters and simple checks to show a notice if that name has been already used.  
   * Leaderboard records using a http://dreamlo.com/ webservice.  

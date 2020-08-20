@@ -1,5 +1,5 @@
 # FlappyBirdPlayvationTest2020
-A project for an interview test. Consist in optimize and improve the code and the game's playability in 3-5 hours.  
+A project for an interview test. Consists in optimize and improve and document the code and the game's playability in 3-6 hours.  
 Original asset can be found on https://assetstore.unity.com/packages/templates/flappy-bird-style-example-game-80330
 
 
